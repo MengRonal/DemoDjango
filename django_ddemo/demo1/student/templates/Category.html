@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Category Page {% endblock title %}
+
+{% block content %}
+<table class="table my-4 table-striped table-hover table-bordered border-dark ">
+     <thead class="table-dark text-center">
+        <tr>
+            <th scope="col">Category_ID</th>
+          <th scope="col">CategoryName</th>
+          <th scope="col">Description</th>
+            <th scope="col">Date Create</th>
+          <th scope="col">Date Update</th>
+        </tr>
+  </thead>
+{% for category in category_list%}
+    <tbody>
+         <tr>
+             <td class="text-center">{{category.id}}</td>
+             <td class="text-center">{{category.name}}</td>
+            <td >{{category.description}}</td>
+            <td>{{category.create_at}}</td>
+             <td>{{category.updated}}</td>
+        </tr>
+    </tbody>
+
+{% endfor %}
+</table>
+
+{% endblock content %}

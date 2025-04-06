@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Category Page {% endblock title %}
+
+{% block content %}
+<table class="table my-4 table-striped table-hover table-bordered border-dark text-center">
+     <thead class="table-dark text-center">
+        <tr>
+            <th scope="col">Staff_ID</th>
+          <th scope="col">StaffName</th>
+          <th scope="col">Staff_Phone</th>
+            <th scope="col">Staff_Photo</th>
+            <th scope="col">Detail Product</th>
+        </tr>
+  </thead>
+{% for staff in staff_list%}
+    <tbody>
+         <tr >
+             <td class="text-center">{{staff.id}}</td>
+             <td class="text-center">{{staff.name}}</td>
+            <td >{{staff.phone}}</td>
+            <td> <img src="/media/{{staff.photo}}" style="width:150px" > </td>
+             <td><a href="/student/detail/{{ staff.id }}">Detail</a></td>
+        </tr>
+    </tbody>
+
+{% endfor %}
+</table>
+
+{% endblock content %}
